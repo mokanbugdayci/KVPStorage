@@ -51,8 +51,7 @@ class Parser : public ParserObj
             
             Parser();
             ~Parser();
-            bool inputParser(std::string& input);
-            // bool inputParser(std::string& input, ParserObj *output);       
+            bool inputParser(std::string& input);       
 
       private:
             std::string errorMessage(Error_t err_code);

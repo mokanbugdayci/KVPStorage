@@ -1,5 +1,5 @@
 /**
- * @file application.h
+ * @file interface.h
  * @author M. Okan Bugdayci
  * @brief 
  * @version 0.1
@@ -9,8 +9,8 @@
  * 
  */
 
-#ifndef _APPLICATION_H_
-#define _APPLICATION_H_
+#ifndef _INTERFACE_H_
+#define _INTERFACE_H_
 
 #include <string>
 
@@ -26,14 +26,14 @@ void kvpApp(std::string &input);
  * 
  * @param args 
  */
-void cliInterfaceApp(void *args);
+void cliInterface(void *args);
 
 /**
  * @brief 
  * 
  * @param args 
  */
-void extInterfaceApp(void *args);
+void extInterface(void *args);
 
 
 #endif  //_APPLICATION_H_

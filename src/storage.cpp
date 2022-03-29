@@ -28,7 +28,7 @@ const std::string delimiter = " ";
  */
 Storage::Storage()
 {
-      
+
 }
 
 Storage::~Storage()

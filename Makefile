@@ -1,13 +1,12 @@
 
 BUILD_INFORMATION += -DBUILD_TIME="\"$(shell date +"%d.%m.%Y-%H:%M:%S")\""
 BUILD_INFORMATION += -DKERNEL_VERSION="\"$(shell uname -r)\""
-# BUILD_INFORMATION += -DG++_VERSION="\"$(shell g++ --version | awk 'NR==1{print}' | tr -d '\(\)' | tr ' ' '_')\""
 
 # SYS_ARCH = $(shell arch)
 
 # ifdef SYS_ARCH $("x86_64")
 
-CXX		= g++
+CXX			= g++
 # CXX		= /mnt/workspace/buildroot-2022.02_first/output/host/usr/bin/arm-linux-g++
 CXXFLAGS 	= -fdiagnostics-color=always -std=c++11 -O0 -g -pthread -Wall -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function
 CXXFLAGS	+= $(BUILD_INFORMATION)

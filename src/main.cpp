@@ -9,21 +9,10 @@
  * 
  */
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <cstring>
-#include <algorithm>
+
 #include <thread>
 
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-#include <netinet/in.h>
-
-#include "../inc/storage.h"
-#include "../inc/parser.h"
+#include "../inc/main.h"
 #include "../inc/application.h"
 
 /**
@@ -35,14 +24,11 @@
  */
 int main(int argc, char **argv)
 {
-      int test = 0;
-      std::thread kvpCliThread(cliInterfaceApp, &test);
-      std::thread kvpExtThread(extInterfaceApp, &test);
+      std::thread kvpCliThread(cliInterface, &argc); //, &test);
+      std::thread kvpExtThread(extInterface, &argc);
 
       kvpCliThread.join();
       kvpExtThread.join();
-
-      // Extinterface *sock = new Extinterface();
 
       return 0;
 }

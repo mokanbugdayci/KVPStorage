@@ -84,11 +84,11 @@ void kvpApp(std::string &inputOutputBuff)
  * 
  * @param args 
  */
-void cliInterfaceApp(void *args)
+void cliInterface(void *args)
 {
       std::string input;
 
-      while(input != "q")
+      while(1)
       {
             std::cout << "> ";
             std::getline(std::cin, input);
@@ -106,7 +106,7 @@ void cliInterfaceApp(void *args)
  * 
  * @param args 
  */
-void extInterfaceApp(void *args_from_main_thr)
+void extInterface(void *args_from_main_thr)
 {
       int socketFd, opt = 1;
 

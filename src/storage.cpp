@@ -28,8 +28,7 @@ const std::string delimiter = " ";
  */
 Storage::Storage()
 {
-      // storageFile = new std::fstream;
-      // storageFile->open("storage",  ios::in | ios::out | ios::app);
+      
 }
 
 Storage::~Storage()

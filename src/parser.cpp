@@ -1,6 +1,6 @@
 /**
  * @file parser.cpp
- * @author your name (you@domain.com)
+ * @author M. Okan Bugdayci
  * @brief 
  * @version 0.1
  * @date 2022-03-26
@@ -9,18 +9,15 @@
  * 
  */
 
-
 #include <map>
 #include <vector>
 #include <sstream>
 #include <iostream>
 #include <algorithm>
-#include <regex>
 
 #include "../inc/parser.h"
 
-/* koda abstraction oluşturarak, yeni komutu eklemelerini kolaylaştırıyoruz. sadece command table güncellnecek 
-karşılaştırma işlemlerini */
+/* Command - Argument table. number of argument for eac comment and numerical value of command mapped */
 const std::map<std::string, std::map<int, ParserObj::Commands_t>> commandTable =
 {     
 /*    {"Cmd String",    {{Number of cmd's argument,   cmd's numeric value}}} */
@@ -29,25 +26,29 @@ const std::map<std::string, std::map<int, ParserObj::Commands_t>> commandTable =
       {"DELETE",        {{1,                          ParserObj::CMD_DELETE_KV}}}
 };
 
+/**
+ * @brief Construct a new Parser:: Parser object
+ * 
+ */
 Parser::Parser()
 {
-
 }
 
+/**
+ * @brief Destroy the Parser:: Parser object
+ * 
+ */
 Parser::~Parser()
 {
-
 }
 
 /**
  * @brief 
  * 
  * @param input 
- * @param output 
  * @return true 
  * @return false 
  */
-// bool Parser::inputParser(std::string& input, ParserObj *output)
 bool Parser::inputParser(std::string& input)
 {
       int argument_counter = 0;
@@ -80,13 +81,11 @@ bool Parser::inputParser(std::string& input)
                         if(cmdParamsOnTable.first == argument_counter)
                         {
                               /* Set numeric value of cmd in parserObj */
-                              // output->setCommand(cmdParamsOnTable.second);
                               setCommand(cmdParamsOnTable.second);
 
                               /* Set key-value pairs in parserObj */
                               for(int i = 0; i < argument_counter; i++)
                               {
-                                    // output->setParam(i, arguments[i]);
                                     setParam(i, arguments[i]);
 
                                     /* pucntuation check. do not allow the punctuations as a key by theirselves */
@@ -116,6 +115,13 @@ bool Parser::inputParser(std::string& input)
       return false; 
 }
 
+
+/**
+ * @brief 
+ * 
+ * @param err_code 
+ * @return std::string 
+ */
 std::string Parser::errorMessage(Error_t err_code)
 {
       std::string error_str;

@@ -1,6 +1,6 @@
 /**
  * @file storage.h
- * @author your name (you@domain.com)
+ * @author M. Okan Bugdayci
  * @brief 
  * @version 0.1
  * @date 2022-03-26

@@ -1,0 +1,9 @@
+config BR2_PACKAGE_KVPSTORAGE
+    bool "kvpstorage"
+    depends on BR2_INSTALL_LIBSTDCPP
+    help
+        KVPStorage is a sipmple key-value data base storage application that 
+        can be accessable both command line and remote socket.
+
+        https://example.com
+        

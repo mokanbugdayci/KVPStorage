@@ -6,8 +6,8 @@ can be accessable both command line and remote socket.
 
 It has three different commands for SET/GET/DELETE operations.
 
-SET <key> <value>
-GET <key>
-DELETE <key>
+SET key value
+GET key
+DELETE key
   
  
